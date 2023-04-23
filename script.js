@@ -1,4 +1,3 @@
 function change(){
-    websrce = document.getElementById("app");
-    websrce.src = "https://classroom.google.com/u/0/h"
+    document.getElementById("app").src= "https://www.google.com/" 
 }
