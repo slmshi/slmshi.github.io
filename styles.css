@@ -5,11 +5,14 @@ body {
 }
 
 .topnav {
+  flex: content;
+  overflow-wrap: break-word;
   overflow: hidden;
   background-color: #3866b9;
   border-radius: 30px 30px 30px 30px;
   box-shadow: 0px 0px 20px 10px rgb(108, 123, 196);
   position: relative;
+  transition: 0.5s ease-out;
   animation-name: topnavAnim;
   animation-duration: 2.5s;
 }  
@@ -30,6 +33,7 @@ body {
   float: left;
   color: #3930b1;
   border-radius:30px 30px 30px 30px;
+  transition: transform 0.5s, box-shadow 0.5s;
   text-align: center;
   padding: 2vh 2vw;
   text-decoration: wavy;
@@ -37,12 +41,14 @@ body {
 }
 
 .topnav a:hover {
+  transform: scale(1.2);
   box-shadow: 0px 0px 20px 10px rgb(108, 123, 196);
   background-color: #3b92a8;
   border-radius: 30px 30px 30px 30px
 }
 
 .topnav a.active {
+  
   box-shadow: 0px 0px 20px 10px rgb(108, 123, 196);
   position: relative;
   animation-name: topnavAnim;
@@ -68,25 +74,16 @@ body {
   animation-duration: 2s;
 }
 
-.text p::after{
-  position: relative;
-  animation-name: topnavAnim;
-  animation-delay: 5s;
-}
-
-@keyframes topnav-hover {
-  0%  {opacity: 0; bottom: 20vh;}
-  100% {opacity: 1; bottom: 0;}
-}
-
 @keyframes topnavAnim {
   0% {opacity: 0; bottom: 20vh;}
+  75% {opacity: 1; bottom: -1vh;}
   100% {opacity: 1; bottom: 0vh;}
 }
 
 @keyframes slide_from_right {
   0% {opacity: 0; right:300vh}
   50% {opacity: 0; right: 100vh;}
+  75% {opacity: 1; right: -5vh;}
   100% {opacity: 1; right: 0vh}
 }
 
