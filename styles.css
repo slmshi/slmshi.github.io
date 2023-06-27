@@ -42,6 +42,7 @@ body {
 }
 
 .topnav a.active {
+  box-shadow: 0px 0px 20px 10px rgb(108, 123, 196);
   position: relative;
   animation-name: topnavAnim;
   animation-delay: 1s;
@@ -53,6 +54,7 @@ body {
 }
 
 .topnav a.title {
+  box-shadow: 0px 0px 20px 10px rgb(108, 123, 196);
   background-color: #9fa4e2;
   color: #3930b1;
 }
