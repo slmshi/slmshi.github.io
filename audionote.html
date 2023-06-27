@@ -1,47 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  margin: 0;
-  background-color: darkcyan;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  color: #0f0a55;
-  transition: background-color 100ms ease-out 20ms;
-  text-align: center;
-  padding: 20px 20px;
-  text-decoration: wavy;
-  font-size: 20px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-}
-
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script type="text/javascript" src="text.js"></script>
 </head>
 <body>
 
 <div class="topnav">
+  <a class="title" id="constant">My Website</a>
   <a href="index.html">Home</a>
-  <a class="active" href="audionote.html">Audios</a>
+  <a class="active" href="audionote.html">My Audios</a>
 </div>
 
-<div style="padding-left:16px">
+<div class="text", style="padding-top: 16px; padding-left: 10px;">
+  <h1>These are my audio notes</h>
+  <p style="padding-top: 10px;">lorem ispum dolor color asit</p>
+</div>
+
+<div class= "audiodiv", id="audioplayer", style="padding-top:16px; padding-left: 10px;">
   <audio controls>
     <source src="resources/test.mp3">
   </audio>
