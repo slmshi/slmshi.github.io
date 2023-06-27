@@ -11,10 +11,13 @@ body {
   box-shadow: 0px 0px 20px 10px rgb(108, 123, 196);
   position: relative;
   animation-name: topnavAnim;
-  animation-duration: 3s;
+  animation-duration: 2.5s;
 }  
 
 .topnav #constant {
+  position: relative;
+  animation-name: topnavAnim;
+  animation-duration: 2.5s;
   float: left;
   color: #3930b1;
   text-align: center;
@@ -26,7 +29,6 @@ body {
 .topnav a {
   float: left;
   color: #3930b1;
-  transition: background-color 100ms ease-out 20ms;
   border-radius:30px 30px 30px 30px;
   text-align: center;
   padding: 2vh 2vw;
@@ -40,11 +42,14 @@ body {
 }
 
 .topnav a.active {
-  transition: all 200ms ease-out;
+  position: relative;
+  animation-name: topnavAnim;
+  animation-delay: 1s;
+  animation-duration: 2s;
   background-color: #9fa4e2;
   color: #3930b1;
   border-radius: 30px 30px 30px 30px;
-  
+
 }
 
 .topnav a.title {
@@ -53,9 +58,22 @@ body {
 }
 
 .text {
+  padding-top: 10px;
+  padding-left: 16px;
   position: relative;
   animation-name: slide_from_right;
   animation-duration: 2s;
+}
+
+.text #part{
+  padding-top: 10px;
+  padding-left: 16px;
+  animation-delay: 0.5s;
+}
+
+@keyframes topnav-hover {
+  0%  {opacity: 0; bottom: 20vh;}
+  100% {opacity: 1; bottom: 0;}
 }
 
 @keyframes topnavAnim {
@@ -65,12 +83,14 @@ body {
 
 @keyframes slide_from_right {
   0% {opacity: 0; right:300vh}
+  50% {opacity: 0; right: 100vh;}
   100% {opacity: 1; right: 0vh}
 }
 
 .audiodiv {
+  padding-left: 16px;
+  padding-top: 10px;
   position: relative;
   animation-name: slide_from_right;
   animation-duration: 3s;
-
-}
+} 
