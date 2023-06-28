@@ -4,99 +4,181 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
+
 .topnav {
-  max-height: 10vh;
+  display: flex;
   flex: content;
-  overflow-wrap: break-word;
   overflow: hidden;
-  background-color: #3866b9;
-  border-radius: 30px 30px 30px 30px;
-  box-shadow: 0px 0px 20px 10px rgb(108, 123, 196);
-  position: relative;
-  transition: 0.5s ease-out;
-  animation-name: topnavAnim;
-  animation-duration: 2.5s;
-}  
-
-.topnav #constant {
-  position: relative;
-  animation-name: topnavAnim;
-  animation-duration: 2.5s;
-  float: left;
-  color: #3930b1;
   text-align: center;
-  padding: 2vh 2vw;
-  text-decoration: wavy;
-  font-size: 20px;
-}
-
-.topnav a {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
-  float: left;
-  color: #3930b1;
-  border-radius:30px 30px 30px 30px;
-  transition: transform 0.5s, box-shadow 0.5s;
-  image-rendering: auto;
-  text-align: center;
-  padding: 2vh 2vh;
-  text-decoration: wavy;
-  font-size: 20px;
-}
-
-.topnav a:hover {
-  transform: scale(1.2);
-  box-shadow: 0px 0px 20px 10px rgb(108, 123, 196);
-  background-color: #3b92a8;
-  border-radius: 30px 30px 30px 30px
-}
-
-.topnav a.active {
+  align-items: center;
+  background-color: #4a73be;
+  border-radius: 30px;
   box-shadow: 0px 0px 20px 10px rgb(108, 123, 196);
   position: relative;
+  transition: 0.5s ease;
   animation-name: topnavAnim;
+  animation-duration: 2.7s; 
+  vertical-align: middle;
+
+  > #constant {
+    background-color: #9fa4e2;
+    border-radius: 30px;
+    position: relative;
+    transition: 0.5s ease;
+    animation-name: topnavAnim;
+    animation-duration: 3s;
+    float: left;
+    color: #3930b1;
+    padding: 2vh 2vw;
+    text-decoration: wavy;
+    font-size: 20px;
+  }
+
+  > #empty {
+    padding: 5px;
+  }
+
+  > .active { 
+    box-shadow: 0px 0px 20px 10px rgb(108, 123, 196); 
+    padding: 20px;
+    position: relative; 
+    transition: 0.5s ease;
+    animation-name: topnavAnim; 
+    pointer-events: none;
+    animation-duration: 2s; 
+    background-color: #9fa4e2; 
+    color: #3930b1; 
+    border-radius: 30px;
+    font-size: 20px;
+  }
+
+  > .inactive {
+    float: left;
+    color: #3930b1;
+    background-color: #5d80be;
+    box-shadow: 0 0 10px 1px rgb(76, 83, 117);
+    border-radius:30px;
+    transition: transform 0.5s, box-shadow 0.5s;
+    text-align: center;
+    padding: 20px;
+    text-decoration: wavy;
+    font-size: 20px;
+  }
+  > :hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 20px 10px rgb(108, 123, 196);
+    background-color: #3b92a8;
+    border-radius: 30px;
+  }
+}
+
+
+.image {scale: 1.75; width: 2vh; height: auto; background-size: contain; justify-content: center}
+
+.text {padding-top: 10px; padding-left: 16px; position: relative; animation-name: nice_slide_left; animation-duration: 2s}
+
+.grid-container {
+  display: grid;
+  position: relative;
+  grid-template-columns: auto auto auto auto;
+  row-gap: 16px;
+  column-gap: 16px;
+  background-color: aquamarine;
+  transition: 1.5s ease;
+  padding: 10px;
+  border-radius: 30px;
+  
+  > .grid-item-left {
+    visibility: hidden;
+    border-radius: 30px;
+    height: 25vh;
+    width: 23.3vw;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    transition: transform 0.5s ease;
+    animation-fill-mode: forwards;
+    animation-name: slide_from_left_grid;
+    animation-duration: 1.5s;
+    background-color: #455d8f
+  }
+
+  > .grid-item-right {
+    visibility: hidden;
+    border-radius: 30px;
+    height: 25vh;
+    width: 23.3vw;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    transition: transform 0.5s ease;
+    animation-fill-mode: forwards;
+    animation-name: slide_from_right_grid;
+    animation-duration: 1.5s;
+    background-color: #3930b1
+  }
+}
+
+.right_widget {
+  padding-top: 16px;
+  display: flex;
+  position: relative;
+  float: right;
+  word-wrap: normal;
+  visibility: hidden;
+  animation: nice_slide_right;
+  border-radius: 12px;
+  animation-duration: 2s; 
+  animation-fill-mode: forwards;
   animation-delay: 1s;
-  animation-duration: 2s;
-  background-color: #9fa4e2;
-  color: #3930b1;
-  border-radius: 30px 30px 30px 30px;
-
 }
 
-.topnav a.title {
-  box-shadow: 0px 0px 20px 10px rgb(108, 123, 196);
-  background-color: #9fa4e2;
-  color: #3930b1;
+.grid-container a:hover{transform: scale(1.05)}
+
+.audiodiv {padding-left: 16px; padding-top: 10px; position: relative; animation-name: nice_slide_left; animation-duration: 3s} 
+
+@keyframes nice_slide_left {
+  0% {filter: blur(5px); right:100vw}
+  75% {right: -2vw}
+  100% {filter: blur(0px); right: 0vw}
 }
 
-.text {
-  padding-top: 10px;
-  padding-left: 16px;
-  position: relative;
-  animation-name: slide_from_right;
-  animation-duration: 2s;
+@keyframes nice_slide_right {
+  0% {visibility: visible; filter: blur(5px); left:40vw}
+  75% {left: -2vw}
+  100% {visibility: visible; filter: blur(0px); left: 0vw}
 }
+
+
 
 @keyframes topnavAnim {
-  0% {opacity: 0; bottom: 20vh;}
+  0% {visibility: visible; opacity: 0; bottom: 20vh;}
   75% {opacity: 1; bottom: -1vh;}
   100% {opacity: 1; bottom: 0vh;}
 }
 
-@keyframes slide_from_right {
-  0% {opacity: 0; right:300vh}
-  50% {opacity: 0; right: 100vh;}
-  75% {opacity: 1; right: -5vh;}
-  100% {opacity: 1; right: 0vh}
+@keyframes slide_from_left {
+  0% {visibility: visible; opacity: 0; right:200vh}
+  75% {opacity: 0.7; right: -5vh;}
+  100% {visibility: visible; opacity: 1; right: 0vh}
 }
 
-.audiodiv {
-  padding-left: 16px;
-  padding-top: 10px;
-  position: relative;
-  animation-name: slide_from_right;
-  animation-duration: 3s;
-} 
+@keyframes slide_from_right {
+  0% {visibility: visible; opacity: 0; left:200vh}
+  75% {opacity: 0.7; left: -5vh;}
+  100% {visibility: visible; opacity: 1; left: 0vh}
+}
+
+@keyframes slide_from_left_grid {
+  from {visibility: visible; opacity: 0; right:20vh}
+  to {visibility: visible; opacity: 1; right: 0vh}
+}
+
+@keyframes slide_from_right_grid {
+  from {visibility: visible; opacity: 0; left:20vh}
+  to {visibility: visible; opacity: 1; left: 0vh}
+}
+
+.right_widget {
+
+}

@@ -4,25 +4,104 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="styles.css" />
-  
 </head>
 <body>
-
-  <div class="transition"></div>
   
-<div id="topnav" class="topnav">
-  <a class="title" id="constant">My Website</a>
-  <a class="active">Home</a>
-  <a href="audionote.html">My Audios</a>
-  <a href="moots.html">Twitter</a>
-  <a href="video.html"><img src= "resources/youtube.png" style="height: 2vh;"></a>
+  <div class="topnav">
+  
+    <a class="title" id="constant" href="index.html">My Website</a>
+    <a id="empty" style="visibility: hidden;"></a> 
+    
+    <a class="inactive" href="index.html">Home</a> 
+    <a id="empty" style="visibility: hidden;"></a> 
+    
+    <a class="inactive" href="audionote.html">My Audios</a> 
+    <a id="empty" style="visibility: hidden;"></a> 
+    
+    <a class="inactive" href="twitter.html"><img class="image" src="resources/twitter.png"></a>
+    <a id="empty" style="visibility: hidden;"></a> 
+    
+    <a class="active" href="video.html"><img class="image" src="resources/youtube.png"></a>  
+    <a id="empty" style="visibility: hidden;"></a> 
+  </div>
+
+<div class="text">
+  <h1 style="text-decoration: underline;">My videos</h1>
 </div>
 
-<div class="text" style="padding-left:16px">
-  <h2>Top Navigation Example</h2>
-  <p style="font-size: 11px;">Some content..</p>
+<div class="grid-container" >
+  <h1 style="text-decoration: underline; position:relative; animation-name:slide_from_left; animation-duration: 1s;">Favourite Videos</h1>
+
+  <a class="grid-item-left" style="animation-delay: 2.4s; grid-column: 1;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px;" src="https://www.youtube.com/embed/pvpNDNLD63c" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media;  picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>  
+
+  <a class="grid-item-left" style="animation-delay: 2.4s; grid-column: 2;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/aVN_w4Z5AKc" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
+
+  <a class="grid-item-right" style="animation-delay: 2.4s;  grid-column: 3;">
+  <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/YyswQqslTNU" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
+
+  <a class="grid-item-right" style="animation-delay: 2.4s; grid-column: 4;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/KxnMe07ICKM" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media;  picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
+
+  <a class="grid-item-left" style="animation-delay: 3.9s; grid-column: 1;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/JTQUeIgox9g" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media;  picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
+
+  <a class="grid-item-left" style="animation-delay: 3.9s; grid-column: 2;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/7zJjFYzRFBY" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media;  picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
+
+  <a class="grid-item-right" style="animation-delay: 3.9s;grid-column: 3;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/5GUHguYIBpo" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media;  picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
+
+  <a class="grid-item-right" style="animation-delay: 3.9s; grid-column: 4;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/7_UxCCrRPL4" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media;  picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
 </div>
 
+
+
+<div class="grid-container">
+  <h1 style="text-decoration: underline; position:relative; animation-name:slide_from_left; animation-duration: 1s;">Favourite Videos</h1>
+
+  <a class="grid-item-left" style="animation-delay: 2.4s; grid-column: 1;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px;" src="https://www.youtube.com/embed/pvpNDNLD63c" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media;  picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>  
+
+  <a class="grid-item-left" style="animation-delay: 2.4s; grid-column: 2;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/aVN_w4Z5AKc" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
+
+  <a class="grid-item-right" style="animation-delay: 2.4s;  grid-column: 3;">
+  <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/YyswQqslTNU" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
+
+  <a class="grid-item-right" style="animation-delay: 2.4s; grid-column: 4;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/KxnMe07ICKM" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media;  picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
+
+  <a class="grid-item-left" style="animation-delay: 3.9s; grid-column: 1;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/JTQUeIgox9g" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media;  picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
+
+  <a class="grid-item-left" style="animation-delay: 3.9s; grid-column: 2;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/7zJjFYzRFBY" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media;  picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
+
+  <a class="grid-item-right" style="animation-delay: 3.9s;grid-column: 3;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/5GUHguYIBpo" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media;  picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
+
+  <a class="grid-item-right" style="animation-delay: 3.9s; grid-column: 4;">
+    <iframe style="border-radius: 30px; width: 23.5vw; height: 25vh; border: 2px" src="https://www.youtube.com/embed/7_UxCCrRPL4" title="YouTube video player"  allow="accelerometer; clipboard-write; encrypted-media;  picture-in-picture; web-share" allowfullscreen></iframe>
+  </a>
+</div>
 
 
 </body>
