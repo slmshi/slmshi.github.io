@@ -1,8 +1,7 @@
 body {
   margin: 0;
-  background-color: rgb(15,18,21);
+  background-color: darkslategrey;
   font-family: 'Courier New', Courier, monospace;
-  color: white;
 }
 html, body {
   max-width: 100%;
@@ -12,14 +11,12 @@ html, body {
 .topnav {
   display: flex;
   flex: content;
-  overflow:visible;
+  overflow: hidden;
   text-align: center;
   align-items: center;
-  background-color: rgb(30,33,38);
-  margin-bottom: 30;
-  color: white;
+  background-color: rgb(57, 104, 104);
   border-radius: 30px;
-  box-shadow: 0px 0px 20px 5px rgb(41, 70, 70), inset 0px 0px 20px 5px rgb(41, 70, 70);
+  box-shadow: 0px 0px 20px 10px rgb(41, 70, 70);
   position: relative;
   transition: 0.5s ease;
   animation-name: topnavAnim;
@@ -27,17 +24,15 @@ html, body {
   vertical-align: middle;
 
   > #constant {
-    background-color: rgb(32, 53, 53);
-    box-shadow: 0px 0px 20px 5px rgb(41, 70, 70);
-    margin-right: 25px;
+    background-color: #8e8fa0;
     border-radius: 30px;
     position: relative;
     transition: 0.5s ease;
     animation-name: topnavAnim;
     animation-duration: 3s;
-    color: white;
     float: left;
-    padding: 1.8vh 2vw;
+    color: #3930b1;
+    padding: 2vh 2vw;
     text-decoration: wavy;
     font-size: 20px;
   }
@@ -47,134 +42,84 @@ html, body {
   }
 
   > .active { 
-    box-shadow: 0px 0px 20px 10px rgb(32, 53, 53); 
-    padding: 1.8vh 2vh;
-    margin-left: 5px;
-    margin-right: 5px;
+    box-shadow: 0px 0px 20px 10px rgb(108, 123, 196); 
+    padding: 20px;
     position: relative; 
     transition: 0.5s ease;
     animation-name: topnavAnim; 
-    text-decoration: underline;
     pointer-events: none;
     animation-duration: 2s; 
-    background-color: rgb(42, 66, 66); 
-    color: white;
+    background-color: #8e8fa0; 
+    color: #3930b1; 
     border-radius: 30px;
     font-size: 20px;
   }
 
   > .inactive {
     float: left;
-    background-color: rgb(32, 53, 53);
-    box-shadow: 0 0 10px 1px rgb(41, 70, 70);
-    color: white;
-    margin-left: 5px;
-    margin-right: 5px;
+    color: #3930b1;
+    background-color: #5d80be;
+    box-shadow: 0 0 10px 1px rgb(76, 83, 117);
     border-radius:30px;
     transition: transform 0.5s, box-shadow 0.5s;
     text-align: center;
-    padding: 1.8vh 2vh;
+    padding: 20px;
     text-decoration: wavy;
     font-size: 20px;
   }
   > :hover {
     transform: scale(1.2);
-    box-shadow: 0px 0px 20px 10px rgb(41, 70, 70);
+    box-shadow: 0px 0px 20px 10px rgb(108, 123, 196);
+    background-color: #3b92a8;
     border-radius: 30px;
-    z-index: 101;
   }
 }
 
 
 .image {scale: 1.75; width: 2vh; height: auto; background-size: contain; justify-content: center}
 
-
 .text {
-  width: fit-content;
-  margin-top: 16px;
-  margin-left: 16px;
-  font-size: 25px;
-  opacity: 0;
-  position: relative;
+  padding-top: 15px;
+  padding-left: 10px;
+  font-size: 14px;
+  position: relative;   
   transition: transform 0.5s ease;
   animation-duration: 1.5s;
   animation-name: slide_from_left;
-  animation-fill-mode: forwards;
-  width: fit-content;
+   
+  > .paragraph {
+    margin-left: 10vh;
+    transform: scale(1.1);
+  }
 }
 
 
-
-.text p{
-  visibility: hidden;
+.text p {
+  padding-top: 10px;
+  padding-left: 16px;
+  font-size: 16px;
   position: relative;
-  animation-duration: 1.5s;
-  animation-name: nice_slide_left;
-  animation-fill-mode: forwards;
-  transition: all 0.5s ease;
-}
-
-.text li{
   opacity: 0;
-  position: relative;
-  animation-duration: 1.5s;
-  animation-name: slide_from_left;
+  animation-name: nice_slide_left;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
   transition: all 0.5s ease;
 
-}
 
-.text li:hover {
-  transform: scale(1.2);
-  translate: 15%;
-  text-shadow: 0px 0px 10px rgb(41, 70, 70);
 }
 
 .right_box {
   float: right;
   position: relative;
-  padding: 10px 10px;
-  height: 85vh;
-  width: 25vw;
-  margin-right: 2vw;
+  padding-top: 16px;
   word-wrap: normal;
-  background: rgb(22, 46, 46);
+  background: #5d80be;
   color: darkslategray;
   border-radius: 30px;
-  visibility: hidden;
-  animation-name: nice_slide_right;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-
-  > .right_box_text {
-    margin-left: 5px;
-    font-size: 25px;
-    visibility: hidden;
-    float: right;
-    position: relative;
-    transition: transform 0.5s ease;
-    animation-duration: 1.5s;
-    animation-name: nice_slide_right;
-    animation-fill-mode: forwards;
-  } 
+  animation-name: slide_from_right;
+  animation-duration: 1s;
 }
 
-
-
-.right_box .right_box_text li{
-  visibility: hidden;
-  position: relative;
-  animation-duration: 1.5s;
-  animation-name: nice_slide_right;
-  animation-fill-mode: forwards;
-  transition: all 0.5s ease;
-}
-
-.right_box .right_box_text li:hover {
-  transform: scale(1.2);
-  translate: 15%;
-  text-shadow: 0px 0px 10px rgb(61, 95, 95);
-}
 
 .grid-container {
   opacity: 0;
@@ -187,9 +132,9 @@ html, body {
   column-gap: 0.05vw;
   align-items: center;
   float: center;
-  background-color: rgb(30, 51, 51);
+  background-color: rgb(41, 70, 70);
   box-shadow: 0px 0px 10px 2px #455d8f;
-  animation-name: fade-in;
+  animation-name: slide_from_left;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   transition: 1.5s ease;
@@ -207,7 +152,7 @@ html, body {
     transition: ease transform 0.5s, box-shadow 0.5s;
     animation-fill-mode: forwards;
     animation-name: slide_from_left_grid;
-    animation-duration: 0.75s;
+    animation-duration: 1.5s;
     background-color: #455d8f
   }
 
@@ -223,8 +168,8 @@ html, body {
     transition: ease transform 0.5s, box-shadow 0.5s;
     animation-fill-mode: forwards;
     animation-name: slide_from_right_grid;
-    animation-duration: 0.75s;
-    background-color: #455d8f
+    animation-duration: 1.5s;
+    background-color: #3930b1
   }
 
   > .grid-item-left_2 {
@@ -240,7 +185,7 @@ html, body {
     transition: ease transform 0.5s, box-shadow 0.5s;
     animation-fill-mode: forwards;
     animation-name: slide_from_left_grid_2;
-    animation-duration: 0.75s;
+    animation-duration: 1.5s;
     background-color: #455d8f
   }
 
@@ -257,64 +202,25 @@ html, body {
     transition: ease transform 0.5s, box-shadow 0.5s;
     animation-fill-mode: forwards;
     animation-name: slide_from_right_grid_2;
-    animation-duration: 0.75s;
-    background-color: #455d8f
+    animation-duration: 1.5s;
+    background-color: #3930b1
   }
   > .grid-text {
-    opacity: 0;
     display: block;
-    margin-left: 16px;
+    float: center;
     text-decoration: underline;
     position: relative;
     animation-name: slide_from_left;
-    animation-duration: 1.3s;
-    animation-fill-mode: forwards;
+    animation-duration: 1.6s;
     color: white;
     text-shadow: 0px 0px 10px white;
   }
 }
 
-.social-grid {
-  visibility: hidden;
-  display: grid;
-  position: relative;
-  grid-template-columns: auto auto auto auto auto;
-  align-items: center;
-  float: center;
-  background-color: rgb(30, 51, 51);
-  box-shadow: 0px 0px 10px 2px #455d8f;
-  animation-name: nice_slide_right;
-  animation-duration: 1s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-  transition: 1.5s ease;
-  padding: 10px;
-  border-radius: 30px;
-  
-  > .social-grid-item {
-    opacity: 0;
-    border-radius: 30px;
-    height: 5vh;
-    display: flex;
-    position: relative;
-    justify-content: center;
-    transition: ease scale 0.5s, box-shadow 0.5s;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
-    animation-name: slide_from_right_grid;
-    animation-duration: 0.75s;
-    background-color: #ffffff00
-  }
-}
-
-.social-grid .social-grid-item:hover {
-  scale: 1.2;
-  box-shadow: 0px 0px 10px 5px #455d8f;
-}
 
 
 /* Twitter widget*/
-.right_widget {
+.right_widget { 
   padding-top: 16px;
   display: flex;
   position: relative;
@@ -330,28 +236,15 @@ html, body {
 
 .grid-container a:hover{transform: scale(1.05); box-shadow: 0px 0px 10px 5px rgb(0, 0, 0);}
 
-.social-grid {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  border-radius: 30px;
-  
-}
-
-.audiodiv {padding-left: 16px; padding-top: 10px; position: relative; animation-name: nice_slide_left; animation-duration: 2s} 
+.audiodiv {padding-left: 16px; padding-top: 10px; position: relative; animation-name: nice_slide_left; animation-duration: 3s} 
 
 
 
 /* Keyframes go below here*/
-
-@keyframes fade-in {
-  from {opacity: 0;}
-  to {opacity: 1;}  
-}
-
 @keyframes nice_slide_left {
-  0% {visibility: visible; filter: blur(10px); right:50vw}
+  0% {opacity: 0; filter: blur(5px); right:50vw}
   75% {right: -2vw; filter: blur(3px)}
-  100% {visibility: visible; filter: blur(0px); right: 0vw}
+  100% {opacity: 1; filter: blur(0px); right: 0vw}
 }
 
 @keyframes nice_slide_right {
@@ -367,9 +260,9 @@ html, body {
 }
 
 @keyframes slide_from_left {
-  0% {opacity: 0; right:20vh}
+  0% {visibility: visible; opacity: 0; right:20vh}
   75% {opacity: 0.7; right: -5vh;}
-  100% {opacity: 1; right: 0vh}
+  100% {visibility: visible; opacity: 1; right: 0vh}
 }
 
 @keyframes slide_from_right {
@@ -379,13 +272,13 @@ html, body {
 }
 
 @keyframes slide_from_left_grid {
-  from {filter: blur(10px); right:10vh}
-  to {filter: blur(0px); opacity: 1; right: 0vh}
+  from {right:10vh}
+  to {opacity: 1; right: 0vh}
 }
 
 @keyframes slide_from_right_grid {
-  from {filter: blur(10px); left:10vh}
-  to {filter: blur(0px); opacity: 1; left: 0vh}
+  from {left:10vh}
+  to {opacity: 1; left: 0vh}
 }
 
 @keyframes slide_from_left_grid_2 {
