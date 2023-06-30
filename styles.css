@@ -74,7 +74,6 @@ html, body {
     border-radius:30px;
     transition: transform 0.5s, box-shadow 0.5s;
     text-align: center;
-
     text-decoration: wavy;
     font-size: 20px;
   }
@@ -103,8 +102,6 @@ html, body {
   animation-fill-mode: forwards;
   width: fit-content;
 }
-
-
 
 .text p{
   visibility: hidden;
@@ -160,8 +157,6 @@ html, body {
   } 
 }
 
-
-
 .right_box .right_box_text li{
   visibility: hidden;
   position: relative;
@@ -211,7 +206,6 @@ html, body {
     animation-duration: 0.75s;
     background-color: #455d8f
   }
-
 
   > .grid-item-right {
     opacity: 0;
