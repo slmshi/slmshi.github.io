@@ -11,18 +11,23 @@ html, body {
 
 .topnav {
   display: flex;
+  height: 5vh;
   flex: content;
-  overflow:visible;
+  overflow: visible;
   text-align: center;
   align-items: center;
   background-color: rgb(30,33,38);
-  margin-bottom: 30;
+  margin-top: 2vh;
+  margin-bottom: 30px;
   color: white;
   border-radius: 30px;
   box-shadow: 0px 0px 20px 5px rgb(41, 70, 70), inset 0px 0px 20px 5px rgb(41, 70, 70);
   position: relative;
+  -moz-transition: 0.5s ease;
   transition: 0.5s ease;
+  -moz-animation-name: topnavAnim;
   animation-name: topnavAnim;
+  -moz-animation-duration: 2.7s;
   animation-duration: 2.7s; 
   vertical-align: middle;
 
@@ -274,15 +279,20 @@ html, body {
   display: grid;
   position: relative;
   grid-template-columns: auto auto auto auto auto;
+  height: 5vh;
   align-items: center;
-  float: center;
   background-color: rgb(30, 51, 51);
   box-shadow: 0px 0px 10px 2px #455d8f;
+  -moz-animation-name: nice_slide_right;
   animation-name: nice_slide_right;
+  -moz-animation-duration: 1s;
   animation-duration: 1s;
+  -moz-animation-delay: 1s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
+  -moz-transition: 1.5s ease;
   transition: 1.5s ease;
+
   padding: 10px;
   border-radius: 30px;
   
@@ -293,7 +303,11 @@ html, body {
     display: flex;
     position: relative;
     justify-content: center;
+    -moz-transition: ease scale 0.5s, box-shadow 0.5s;
     transition: ease scale 0.5s, box-shadow 0.5s;
+    -moz-animation-name: slide_from_right_grid;
+    -moz-animation-duration: 0.75s;
+    -moz-animation-delay: 5s;
     animation-delay: 2s;
     animation-fill-mode: forwards;
     animation-name: slide_from_right_grid;
@@ -389,6 +403,62 @@ html, body {
 }
 
 @keyframes slide_from_right_grid_2 {
+  from {left:10vh; filter: blur(10px)}
+  to {opacity: 1; left: 0vh; filter: blur(0px)}
+}
+
+
+@-moz-keyframes fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}  
+}
+
+@-moz-keyframes nice_slide_left {
+  0% {visibility: visible; filter: blur(10px); right:50vw}
+  75% {right: -2vw; filter: blur(3px)}
+  100% {visibility: visible; filter: blur(0px); right: 0vw}
+}
+
+@-moz-keyframes nice_slide_right {
+  0% {visibility: visible; filter: blur(10px); left:40vw}
+  75% {left: -2vw; filter: blur(3px);}
+  100% {visibility: visible; filter: blur(0px); left: 0vw}
+}
+
+@-moz-keyframes topnavAnim {
+  0% {filter: blur(10px) ; bottom: 20vh;}
+  75% {opacity: 1; bottom: -1vh;}
+  100% {filter: blur(0px); opacity: 1; bottom: 0vh;}
+}
+
+@-moz-keyframes slide_from_left {
+  0% {opacity: 0; right:20vh}
+  75% {opacity: 0.7; right: -5vh;}
+  100% {opacity: 1; right: 0vh}
+}
+
+@-moz-keyframes slide_from_right {
+  0% {left:20vh}
+  75% {opacity: 0.7; left: -5vh;}
+  100% {opacity: 1; left: 0vh}
+}
+
+@-moz-keyframes slide_from_left_grid {
+  from {filter: blur(10px); right:10vh}
+  to {filter: blur(0px); opacity: 1; right: 0vh}
+}
+
+@-moz-keyframes slide_from_right_grid {
+  from {filter: blur(10px); left:10vh}
+  to {filter: blur(0px); opacity: 1; left: 0vh}
+}
+
+@-moz-keyframes slide_from_left_grid_2 {
+  from {right:10vh; filter: blur(10px)}
+  to {opacity: 1; right: 0vh; filter: blur(0px);}
+}
+
+@-moz-keyframes slide_from_right_grid_2 {
   from {left:10vh; filter: blur(10px)}
   to {opacity: 1; left: 0vh; filter: blur(0px)}
 }
