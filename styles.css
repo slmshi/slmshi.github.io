@@ -19,6 +19,8 @@ html, body {
   background-color: rgb(30,33,38);
   margin-top: 2vh;
   margin-bottom: 30px;
+  margin-left: 1vw;
+  margin-right: 1vw;
   color: white;
   border-radius: 30px;
   box-shadow: 0px 0px 20px 5px rgb(41, 70, 70), inset 0px 0px 20px 5px rgb(41, 70, 70);
@@ -103,7 +105,7 @@ html, body {
   position: relative;
   transition: transform 0.5s ease;
   animation-duration: 1.5s;
-  animation-name: slide_from_left;
+  animation-name: fade-in;
   animation-fill-mode: forwards;
   width: fit-content;
 }
@@ -118,10 +120,10 @@ html, body {
 }
 
 .text li{
-  opacity: 0;
+  visibility: hidden;
   position: relative;
   animation-duration: 1.5s;
-  animation-name: slide_from_left;
+  animation-name: nice_slide_left;
   animation-fill-mode: forwards;
   transition: all 0.5s ease;
 
@@ -152,8 +154,7 @@ html, body {
   > .right_box_text {
     margin-left: 5px;
     font-size: 25px;
-    visibility: hidden;
-    float: right;
+    float: left;
     position: relative;
     transition: transform 0.5s ease;
     animation-duration: 1.5s;
@@ -166,6 +167,7 @@ html, body {
   visibility: hidden;
   position: relative;
   animation-duration: 1.5s;
+  animation-delay: 1s;
   animation-name: nice_slide_right;
   animation-fill-mode: forwards;
   transition: all 0.5s ease;
@@ -175,6 +177,75 @@ html, body {
   transform: scale(1.2);
   translate: 15%;
   text-shadow: 0px 0px 10px rgb(61, 95, 95);
+}
+
+.notes_grid_container {
+  opacity: 1;
+  display: grid;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  column-gap: 2vw;
+  height: 85vh;
+  border-radius: 30px;
+  align-items: center;
+  padding: 10px;
+  > .left_notes {
+    display: flex;
+    height: inherit;
+    opacity: 0;
+    border-radius: inherit;
+    position: inherit;
+    border-radius: inherit;
+    background-color: rgb(22, 46, 46);
+    animation-name: slide_left_notes;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+    animation-duration: 2s;
+    transition: transform 0.5s ease;
+
+  }
+  > .center_notes {
+    display: flex;
+    position: relative;
+    height: inherit;
+    opacity: 0;
+    border-radius: inherit;
+    background-color: rgb(22, 46, 46);
+    animation-name: slide_up_notes;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+    animation-duration: 2s;
+    transition: transform 0.5s ease;
+  }
+  > .right_notes {
+    display: flex;
+    position: inherit;
+    height: inherit;
+    opacity: 0;
+    border-radius: inherit;
+    background-color: rgb(22, 46, 46);
+    animation-name: slide_right_notes;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+    animation-duration: 2s;
+    transition: transform 0.5s ease;
+
+  }
+}
+
+.notes_grid_container .center_notes:hover {
+  transform: scale(1.05);
+}
+
+.notes_grid_container .left_notes:hover {
+  transform: scale(1.05);
+}
+
+.notes_grid_container .right_notes:hover {
+  transform: scale(1.05);
 }
 
 .grid-container {
@@ -187,7 +258,6 @@ html, body {
   row-gap: 2vh;
   column-gap: 0.05vw;
   align-items: center;
-  float: center;
   background-color: rgb(30, 51, 51);
   box-shadow: 0px 0px 10px 2px #455d8f;
   animation-name: fade-in;
@@ -349,12 +419,86 @@ html, body {
 .audiodiv {padding-left: 16px; padding-top: 10px; position: relative; animation-name: nice_slide_left; animation-duration: 2s} 
 
 
+.grid-menu {
+  opacity: 1;
+  display: grid;
+  position: relative;
+  grid-template-columns: 70vw auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  row-gap: 2vh;
+  column-gap: 0.05vw;
+  align-items: center;
+  transition: 1.5s ease;
+  padding: 10px;
+  border-radius: 30px;
+  > .menu {
+    display: block;
+    visibility: hidden;
+    height: 80vh;
+    position: relative;
+    animation-name: nice_slide_right;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    background-color: #455d8f;
+    text-align: center1;
+    transition: 0.5s ease;
+  }
+}
+
+.grid-menu .menu p {
+  display: block;
+  visibility: hidden;
+  border-radius: 30px 0px 0px 30px;
+  height: 30px;
+  width: 60vh;
+  position: relative;
+  background-color: aqua;
+  animation-name: nice_slide_right;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  padding-left: 10px;
+  text-align: left;
+  transition: 0.5s ease;
+}
+
+.grid-menu .menu p:hover {
+  scale: 1.2;
+}
+
+[data-tab-content] {
+  display:none;
+}
+
+.active[data-tab-content] {
+  display: block;
+} 
 
 /* Keyframes go below here*/
 
 @keyframes fade-in {
   from {opacity: 0;}
   to {opacity: 1;}  
+}
+
+@keyframes slide_up_notes {
+  0% {opacity: 0; filter: blur(10px); top: 20vw;}
+  60% {box-shadow: 0px 0px 0px 0px rgb(22, 46, 46);}
+  100% {opacity: 1; filter: blur(0px); top: 0vw; box-shadow: 0px 0px 30px 5px rgb(22, 46, 46);}
+}
+
+@keyframes slide_left_notes {
+  from {filter: blur(10px); right:20vw}
+  60% {box-shadow: 0px 0px 0px 0px rgb(22, 46, 46);}
+  to {filter: blur(0px); opacity: 1; right: 0vh;  box-shadow: 0px 0px 30px 5px rgb(22, 46, 46);}
+}
+
+@keyframes slide_right_notes {
+  from {filter: blur(10px); left: 20vw;}
+  60% {box-shadow: 0px 0px 0px 0px rgb(22, 46, 46);}
+  to {filter: blur(0px); opacity: 1; left: 0vw; box-shadow: 0px 0px 30px 5px rgb(22, 46, 46);}  
 }
 
 @keyframes nice_slide_left {

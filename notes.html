@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html style="height: 100%;">
+<head style="height: 100%;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="styles.css" />
-  <script type="text/javascript" src="text.js"></script>
+  <script type="text/javascript" src="app.js" defer></script>
+  <style>
+    html, body {
+      overflow-y: hidden;
+    }
+  </style>
 </head>
-<body>
+<body style="height: 100%;">
 
   <div class="topnav">
   
@@ -20,16 +25,15 @@
     <a class="inactive" href="video.html"><img class="image" src="resources/youtube.png"></a>  
   </div>
 
-<div class="text">
-  <h1>These are my notes</h>
-  <p style="padding-top: 10px; font-size: 15px;">lorem ispum dolor color asit</p>
-</div>
-
-<div class= "audiodiv", id="audioplayer">
-  <audio controls>
-    <source src="resources/test.mp3">
-  </audio>
-</div>
+  <div class="notes_grid_container">
+    <ul class="left_notes">
+      <li>Left</li>
+    </ul>
+    <div class="center_notes">hello</div>
+    <ul class="right_notes">
+      <li>Right</li>
+    </ul>
+  </div>
 
 </body>
 </html>

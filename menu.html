@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head style="height: 100%;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="tabs.js"></script>
+    <link href="styles.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        html, body {
+            overflow-y: hidden;
+        }
+    </style>
+</head>
+<body style="height: 100%;">
+    <div class="topnav">
+  
+        <a class="title" id="constant" href="index.html">My Website</a>
+        
+        <a class="inactive" href="index.html">Home</a> 
+        
+        <a class="inactive" href="notes.html">My Audios</a> 
+        
+        <a class="active" href="twitter.html"><img class="image" src="resources/twitter.png"></a>
+        
+        <a class="inactive" href="video.html"><img class="image" src="resources/youtube.png"></a>  
+    </div>
+
+    <div class="grid-menu">
+        <div class="tab-content" style="grid-column: 1; color:white;">
+            <div id="first"  data-tab-content>
+                <h1>first</h1>
+                <p></p>
+            </div>
+            <div id="second" data-tab-content>
+                <h1>second</h1>
+                <p>This is a test</p>
+            </div>
+            <div id="third" data-tab-content>
+                <h1>third</h1>
+                <p>This is a test</p>
+            </div>
+        </div>
+        
+        <div class="menu" style="grid-column: 2; height: 80vh;">
+            <h1 style="vertical-align: middle;">Games that I play:</h1>
+            
+            <ul class="tabs" style="vertical-align: middle;">
+                <p data-tab-target="#first" class="tab">Splatoon</p>
+                <p data-tab-target="#second" class="tab">Minecraft</p>
+                <p data-tab-target="#third" class="tab">Brawlhalla</p>
+            </ul>
+        </div>
+</body> 
+</html>
