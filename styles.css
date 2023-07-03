@@ -439,10 +439,7 @@ html, body {
     position: relative;
     animation-name: nice_slide_right;
     animation-fill-mode: forwards;
-    animation-delay: 1s;
     animation-duration: 2s;
-    background-color: #455d8f;
-    text-align: center1;
     transition: 0.5s ease;
   }
 }
@@ -451,21 +448,23 @@ html, body {
   display: block;
   visibility: hidden;
   border-radius: 30px 0px 0px 30px;
-  height: 30px;
-  width: 60vh;
+  height: 50px;
+  width: 70vh;
+  padding-left: 20px;
+  font-size: 30px;
   position: relative;
-  background-color: aqua;
+  background-color: rgb(30, 51, 51);
   animation-name: nice_slide_right;
   animation-fill-mode: forwards;
-  animation-delay: 1s;
   animation-duration: 2s;
-  padding-left: 10px;
   text-align: left;
   transition: 0.5s ease;
 }
 
 .grid-menu .menu p:hover {
   scale: 1.2;
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 10px 5px rgb(30, 51, 51);
 }
 
 [data-tab-content] {
@@ -474,7 +473,26 @@ html, body {
 
 .active[data-tab-content] {
   display: block;
+  opacity: 0;
+  position: relative;
+  border-radius: 30px;
+  height: 80vh;
+  width: 60vw;
+  background-color: rgb(30, 51, 51);
+  animation-name: slide_left_notes;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  padding-top: 10px;
+  padding-left: 50px;
 } 
+
+.active[data-tab-content] p {
+  visibility: hidden;
+  position: relative;
+  animation-name: nice_slide_left;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
 
 /* Keyframes go below here*/
 
