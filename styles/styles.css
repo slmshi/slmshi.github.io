@@ -5,7 +5,8 @@ body {
   color: white;
 }
 html, body {
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 
@@ -258,8 +259,8 @@ html, body {
   margin-left: 10px;
   margin-right: 10px;
   row-gap: 2vh;
+  justify-content: center;
   column-gap: 0.05vw;
-  align-items: center;
   background-color: rgb(30, 51, 51);
   animation-name: fade-in;
   animation-duration: 1s;
@@ -270,8 +271,8 @@ html, body {
   
   > .grid-item-left {
     opacity: 0;
+    margin: 10px;
     border-radius: 30px;
-    height: 25vh;
     width: 23.3vw;
     display: flex;
     position: relative;
@@ -285,8 +286,8 @@ html, body {
 
   > .grid-item-right {
     opacity: 0;
+    margin: 10px;
     border-radius: 30px;
-    height: 25vh;
     width: 23.3vw;
     display: flex;
     position: relative;
@@ -304,7 +305,7 @@ html, body {
     opacity: 0;
     border-radius: 30px;
     height: 25vh;
-    width: 23.3vw;
+    width: auto;
     display: flex;
     position: relative;
     justify-content: center;
@@ -321,7 +322,7 @@ html, body {
     opacity: 0;
     border-radius: 30px;
     height: 25vh;
-    width: 23.3vw;
+    width: auto;
     display: flex;
     position: relative;
     justify-content: center;
@@ -500,25 +501,38 @@ html, body {
   opacity: 0;
   position: relative;
   border-radius: 30px;
-  grid-template-columns: auto auto;
-  column-gap: 5vw;
-  row-gap: 5vh;
+  justify-content : space-evenly;
+  column-gap: 10%;
+  grid-template-columns: 50% 50%;
+  row-gap: 2vh;
   animation-name: slide_from_left;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
+  margin-right: 0%;
   > .leftvid {
     grid-column: 1;
-    display: block;
+    display: flex;
     opacity: 0;
     position: relative;
+    justify-content: center;
+    width: 100%;
+    height:100%;
     border-radius: 30px;
     animation: slide_from_left_grid;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
-    
   }
   > .rightvid {
-
+    grid-column: 2;
+    display: flex;
+    position: relative;
+    opacity: 0;
+    width: 100%;
+    height:100%;
+    border-radius: 30px;
+    animation: slide_from_right_grid;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -578,13 +592,13 @@ html, body {
 }
 
 @keyframes slide_from_left_grid {
-  from {filter: blur(10px); right:10vh}
-  to {filter: blur(0px); opacity: 1; right: 0vh}
+  from {filter: blur(10px); right:10vw}
+  to {filter: blur(0px); opacity: 1; right: 0px}
 }
 
 @keyframes slide_from_right_grid {
-  from {filter: blur(10px); left:10vh}
-  to {filter: blur(0px); opacity: 1; left: 0vh}
+  from {filter: blur(10px); left:10vw}
+  to {filter: blur(0px); opacity: 1; left: 0px}
 }
 
 @keyframes slide_from_left_grid_2 {
