@@ -501,8 +501,9 @@ html, body {
   opacity: 0;
   position: relative;
   border-radius: 30px;
-  justify-content : space-evenly;
-  column-gap: 10%;
+  justify-content: center;
+  width: fit-content;
+  column-gap: 5%;
   grid-template-columns: 50% 50%;
   row-gap: 2vh;
   animation-name: slide_from_left;
@@ -515,10 +516,11 @@ html, body {
     opacity: 0;
     position: relative;
     justify-content: center;
-    width: 100%;
+    width: 90%;
     height:100%;
     border-radius: 30px;
     animation: slide_from_left_grid;
+    transition: all 0.5s ease;
     animation-duration: 1s;
     animation-fill-mode: forwards;
   }
@@ -527,15 +529,25 @@ html, body {
     display: flex;
     position: relative;
     opacity: 0;
-    width: 100%;
-    height:100%;
+    width: 90%;
+    height:auto;
     border-radius: 30px;
     animation: slide_from_right_grid;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    transition: all 0.5s ease;
   }
 }
 
+.vidmenu_container .leftvid:hover {
+  scale: 1.2;
+  z-index: 101;
+}
+
+.vidmenu_container .rightvid:hover {
+  scale: 1.2;
+  z-index: 101;
+}
 /* Keyframes go below here*/
 
 @keyframes fade-in {
