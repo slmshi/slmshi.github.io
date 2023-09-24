@@ -162,6 +162,26 @@ html, body {
     animation-name: nice_slide_right;
     animation-fill-mode: forwards;
   } 
+  > .kofi {
+    display: flex;
+    opacity: 0;
+    margin-top: 16px;
+    position: relative;
+    animation-fill-mode: forwards;
+    animation-name: slide_from_right_grid;
+    animation-duration: 0.75s;
+    animation-delay: 2.1s;
+    height: 10%;
+    width: fit-content;
+    border-radius: 9px;
+    transition: all ease 0.35s;
+  }
+}
+
+.right_box .kofi:hover {
+  scale: 1.2;
+  translate: 10%;
+  box-shadow: 0 0 16px #455d8f;
 }
 
 .right_box .right_box_text li{
@@ -548,6 +568,8 @@ html, body {
   scale: 1.2;
   z-index: 101;
 }
+
+
 /* Keyframes go below here*/
 
 @keyframes fade-in {
