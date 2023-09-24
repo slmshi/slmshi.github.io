@@ -173,7 +173,7 @@ html, body {
     animation-delay: 2.1s;
     height: 10%;
     width: fit-content;
-    border-radius: 9px;
+    border-radius: 10px;
     transition: all ease 0.35s;
   }
 }
