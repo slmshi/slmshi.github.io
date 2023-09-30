@@ -213,6 +213,7 @@ html, body {
   border-radius: 30px;
   align-items: center;
   padding: 10px;
+
   > .left_notes {
     display: flex;
     height: inherit;
@@ -226,7 +227,6 @@ html, body {
     animation-delay: 0.5s;
     animation-duration: 2s;
     transition: transform 0.5s ease;
-
   }
   > .center_notes {
     display: flex;
@@ -270,6 +270,7 @@ html, body {
 .notes_grid_container .right_notes:hover {
   transform: scale(1.05);
 }
+
 
 .grid-container {
   opacity: 0;
@@ -567,6 +568,34 @@ html, body {
 .vidmenu_container .rightvid:hover {
   scale: 1.2;
   z-index: 101;
+}
+
+.notes_text_left{
+  display: block;
+  visibility: hidden;
+  position: relative;
+  animation-name: nice_slide_left;
+  animation-duration: 1.5s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.notes_text_left li{
+  visibility: hidden;
+  position: relative;
+  font-size: 19px;
+  animation-name: nice_slide_left;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.notes_text_right{
+  display: block;
+  visibility: hidden;
+  position: relative;
+  animation-name: nice_slide_left;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 
 
